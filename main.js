@@ -56,6 +56,38 @@ function setStartingImages() {
 # = Roll Functions
 # ========================================================
 */
+function rollD6() {
+   // const rand =  Math.random();
+    const roll = Math.ceil(Math.random()* 6);
+    sixes.unshift(roll)
+    //const min = Math.ceil(1);
+    //const max = Math.floor(6);
+    //roll.push(sixes);
+    //document.getElementById('d6-button').innerText = random;
+    console.log('it works');
+    
+    
+
+}
+function rollDoubleD6() {
+
+
+}
+
+function rollD12(){
+
+
+}
+
+function rollD20(){
+
+
+}
+
+function resetAllRolls(){
+
+    
+}
 
 /*
 # ========================================================
