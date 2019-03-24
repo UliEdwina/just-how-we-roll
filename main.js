@@ -35,10 +35,11 @@ function init() {
 function setStartingImages() {
     const START_DIRECTORY = './images/start'
     const SIX_SIDED_START_IMAGE = `${START_DIRECTORY}/d6.png`;
+   
 
     const d6Roll = document.querySelector('#d6-roll');
     d6Roll.src = SIX_SIDED_START_IMAGE;
-
+    
     const doubleD12Roll1 = document.querySelector('#double-d6-roll-1')
     const doubleD12Roll2 = document.querySelector('#double-d6-roll-2');
     doubleD12Roll1.src = SIX_SIDED_START_IMAGE;
@@ -59,16 +60,47 @@ function setStartingImages() {
 function rollD6() {
    // const rand =  Math.random();
     const roll = Math.ceil(Math.random()* 6);
-    sixes.unshift(roll)
+    sixes.push(roll)
+    
+   // const average = (roll / roll.length) * .length;
     //const min = Math.ceil(1);
     //const max = Math.floor(6);
     //roll.push(sixes);
-    //document.getElementById('d6-button').innerText = random;
-    console.log('it works');
+    document.getElementById('d6').innerText = roll;
+    let total = 0;
+    for (let i = 0; i < roll.length; i+=1) {
+    total += roll[i];
+    }
+    let average = total/roll.length;
     
     
+    
+    //document.getElementById('d6-averages').innerText= average;
 
 }
+    median(sixes)
+
+    function median(number){
+        let sum = 0
+        let numsLen = number.length;
+        number.sort();
+ 
+    if(
+        numsLen % 2 === 0 // is even
+    ) {
+        // average of two middle numbers
+        sum = (number[numsLen / 2 - 1] + number[numsLen / 2]) / 2;
+    } else { // is odd
+        // middle number only
+        sum = number[(numsLen - 1) / 2];
+    }
+ 
+    return sum;
+    }
+
+
+
+
 function rollDoubleD6() {
 
 
